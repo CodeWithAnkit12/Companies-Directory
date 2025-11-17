@@ -138,7 +138,8 @@ const industries = useMemo(() => {
   async function load() {
     try {
       setLoading(true);
-      const res = await fetch("/src/data/companies.json");
+      const res = await fetch("/companies.json")
+
       const json = await res.json();
       setData(json);
     } catch (err) {
