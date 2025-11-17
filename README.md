@@ -1,73 +1,145 @@
-# React + TypeScript + Vite
+Companies Directory – Frontlines Media
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Companies Directory built with React + TypeScript + Vite + Material UI.
+Users can search, filter, and sort companies, and log in using Google Authentication (Firebase).
 
-Currently, two official plugins are available:
+Live demo:
+👉 https://frontlinesmedia1.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
 
-## React Compiler
+🔍 Search companies by name
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🎯 Filter by location & industry
 
-## Expanding the ESLint configuration
+⇅ Sort by name or number of employees
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+👤 Google login via Firebase
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+📱 Fully responsive Material UI design
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+⚡ Powered by Vite for ultra-fast development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+☁️ Automatically deployed to Netlify
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🏗️ Tech Stack
+Category	Tools
+Framework	React + TypeScript
+UI Library	Material UI (MUI v7)
+Build Tool	Vite
+Auth	Firebase Auth
+Deployment	Netlify
+State Mgmt	React Hooks
+📂 Project Structure
+frontlines-companies/
+│
+├── public/
+│   └── companies.json      # Company dataset served publicly
+│
+├── src/
+│   ├── api/
+│   │   └── companies.ts    # Fetch companies from JSON
+│   ├── components/
+│   │   ├── CompanyCard.tsx
+│   │   ├── CompanyTable.tsx
+│   │   ├── SearchBar.tsx
+│   │   ├── Filters.tsx
+│   │   └── SortSelect.tsx
+│   ├── pages/
+│   │   └── Home.tsx
+│   ├── firebase/
+│   │   └── config.ts        # Firebase initialization
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+📦 Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Make sure you have Node.js 18+ installed.
+
+git clone https://github.com/YOUR-USERNAME/frontlines-companies.git
+cd frontlines-companies
+npm install
+
+🧪 Run in Development
+npm run dev
+
+
+App will run at:
+
+http://localhost:5173/
+
+🔧 Build for Production
+npm run build
+
+
+Output is generated in:
+
+dist/
+
+
+To preview the local build:
+
+npm run preview
+
+🌐 Deploy to Netlify
+
+This project is already optimized for Netlify.
+
+If deploying manually:
+
+Go to https://app.netlify.com/
+
+Create a new site from GitHub
+
+Set the build command:
+
+npm run build
+
+
+Set the publish directory:
+
+dist
+
+
+Deploy 🚀
+
+Handling JSON Data on Netlify
+
+Make sure the data file is inside:
+
+public/companies.json
+
+
+Fetch using:
+
+fetch("/companies.json")
+
+
+Do NOT import JSON inside TypeScript.
+
+🔐 Firebase Setup
+
+Create a Firebase project:
+
+Go to https://console.firebase.google.com/
+
+Enable Google authentication
+
+Add a web app and get the config
+
+Replace your config inside:
+
+src/firebase/config.ts
+
+🤝 Contributing
+
+Contributions are welcome!
+Feel free to open issues or submit pull requests.
+
+📜 License
+
+MIT License © 2024 Frontlines Media
