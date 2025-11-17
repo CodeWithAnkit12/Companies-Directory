@@ -24,7 +24,11 @@ export default function CompanyTable({ data }: { data: Company[] }) {
     <Box maxWidth="1300px" mx="auto">
       <Grid container spacing={4} justifyContent="center">
         {data.map((c) => (
-          <Grid item xs={12} sm={6} md={4} key={c.id}>
+          <Grid  
+            // no `item` prop anymore  
+            size={{ xs: 12, sm: 6, md: 4 }}  
+            key={c.id}  
+          >
             <CompanyCard c={c} />
           </Grid>
         ))}
